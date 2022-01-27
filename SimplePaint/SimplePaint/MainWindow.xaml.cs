@@ -122,7 +122,7 @@ namespace SimplePaint
                         }
                     }
                     _prototypes.Remove("Point");
-
+                    _preview = _prototypes.First().Value.Clone();
                     methodComboBox.ItemsSource = _prototypes;
 
                 }
@@ -140,8 +140,10 @@ namespace SimplePaint
             _isDrawing = true;
 
             Point pos = e.GetPosition(canvas);
-
-            _preview.HandleStart(pos.X, pos.Y);
+            if (_preview != null)
+            {
+                _preview.HandleStart(pos.X, pos.Y);
+            }
         }
 
         private void canvas_MouseMove(object sender, MouseEventArgs e)
@@ -188,7 +190,10 @@ namespace SimplePaint
                 _preview.HandleEnd(pos.X, pos.Y);
 
                 _shapes.Add(_preview);
-
+                if (_selectedShapeName == "")
+                {
+                    return;
+                }
                 // Sinh ra đối tượng mẫu kế
                 _preview = _prototypes[_selectedShapeName].Clone();
 
