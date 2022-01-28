@@ -68,5 +68,23 @@ namespace Line2D
             StrokeThickness = strokeThickness;
             Border = border;
         }
+
+        public void getValueSave(ref Color color, ref Point2D leftTop, ref Point2D rightBottom, ref double strokeThickness, ref double border)
+        {
+            color = Color;
+            leftTop = _start;
+            rightBottom = _end;
+            strokeThickness = StrokeThickness;
+            border = Border;
+        }
+
+        public void setValueSave(ref Color color, ref Point2D leftTop, ref Point2D rightBottom, ref double strokeThickness, ref double border)
+        {
+            _start = leftTop;
+            _end = rightBottom;
+            Color = color;
+            StrokeThickness = strokeThickness;
+            Border = border;
+        }
     }
 }

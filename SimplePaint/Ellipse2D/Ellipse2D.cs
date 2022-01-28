@@ -87,5 +87,23 @@ namespace Ellipse2D
             StrokeThickness = strokeThickness;
             Border = border;
         }
+
+        public void getValueSave(ref Color color, ref Point2D leftTop, ref Point2D rightBottom, ref double strokeThickness, ref double border)
+        {
+            color = Color;
+            leftTop = _leftTop;
+            rightBottom = _rightBottom;
+            strokeThickness = StrokeThickness;
+            border = Border;
+        }
+
+        public void setValueSave(ref Color color, ref Point2D leftTop, ref Point2D rightBottom, ref double strokeThickness, ref double border)
+        {
+            _leftTop = leftTop;
+            _rightBottom = rightBottom;
+            Color = color;
+            StrokeThickness = strokeThickness;
+            Border = border;
+        }
     }
 }
