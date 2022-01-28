@@ -7,6 +7,7 @@ using System.Windows.Shapes;
 
 namespace Ellipse2D
 {
+    [Serializable]
     public class Ellipse2D : IShape
     {
         private Point2D _leftTop = new Point2D();

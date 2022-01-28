@@ -7,6 +7,7 @@ using System.Windows.Shapes;
 
 namespace Rectangle2D
 {
+    [Serializable]
     public class Rectangle2D : IShape
     {
         private Point2D _leftTop = new Point2D();

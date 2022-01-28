@@ -6,6 +6,7 @@ using System.Windows.Shapes;
 
 namespace Line2D
 {
+    [Serializable]
     public class Line2D : IShape
     {
         private Point2D _start = new Point2D();

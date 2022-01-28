@@ -9,6 +9,7 @@ using System.Windows.Shapes;
 
 namespace Contract
 {
+    [Serializable]
     public class Point2D : IShape
     {
         public double X { get; set; }
