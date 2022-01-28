@@ -500,18 +500,29 @@ namespace SimplePaint
 
         private void RibbonWindow_SourceInitialized(object sender, EventArgs e)
         {
-            List<Data> dataShape;
-            List<Data> dataRedos;
-            using (StreamReader r = new StreamReader("shape.json"))
+            List<Data> dataShape = new List<Data>();
+            List<Data> dataRedos = new List<Data>();
+            try
             {
-                string json = r.ReadToEnd();
-                dataShape = JsonConvert.DeserializeObject<List<Data>>(json);
+                using (StreamReader r = new StreamReader("shape.json"))
+                {
+                    string json = r.ReadToEnd();
+                    dataShape = JsonConvert.DeserializeObject<List<Data>>(json);
+                }
             }
-            using (StreamReader r = new StreamReader("redos.json"))
+            catch (Exception)
+            { }
+            try
             {
-                string json = r.ReadToEnd();
-                dataRedos = JsonConvert.DeserializeObject<List<Data>>(json);
+                using (StreamReader r = new StreamReader("redos.json"))
+                {
+                    string json = r.ReadToEnd();
+                    dataRedos = JsonConvert.DeserializeObject<List<Data>>(json);
+                }
             }
+            catch (Exception)
+            { }
+            
 
             for(int i =0;i< dataShape.Count; i++)
             {
@@ -578,5 +589,6 @@ namespace SimplePaint
                 _redos.RemoveAt(_redos.Count - 1);
             }
         }
+
     }
 }

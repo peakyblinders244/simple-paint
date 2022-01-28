@@ -53,7 +53,6 @@
                         <ComboBox  Width="125" Name="methodComboBox" DisplayMemberPath="Value.Name"
           SelectedValuePath="Key" ItemsSource="{Binding _prototypes}"  SelectionChanged="methodComboBox_SelectionChanged" >
 
-
                         </ComboBox>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Height="40" Name="prototypesStackPanel">
@@ -125,7 +124,6 @@
                         <Fluent:Button x:Name="colorLightBlue" Content="LightBlue" Background="LightBlue" BorderBrush="Black" Click="colorLightBlue_Click"></Fluent:Button>
                     </StackPanel>
                 </Fluent:RibbonGroupBox>
-
                 <Fluent:RibbonGroupBox Header="Parameter" HorizontalAlignment="Left" >
 
                     <StackPanel Margin="5 5 5 5">
